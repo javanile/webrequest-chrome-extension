@@ -21,6 +21,10 @@ $RECYCLE.BIN/
 # Node
 node_modules
 
+# IDE
+.idea/
+.vscode/
+
 # =========================
 # Operating System Files
 # =========================
