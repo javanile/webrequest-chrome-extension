@@ -143,7 +143,7 @@ function restoreOptions() {
 	// Set defaults for localStorage get error
 	var options = {};
 	//Generate the keys for the icon
-	options.customUrl = 'https://duckduckgo.com/';
+	options.customUrl = 'https://javanile-webrequest.herokuapp.com/javanile/webrequest-utils/triggers-panel?triggers=javanile/webrequest-utils/ifttt-trigger,javanile/webrequest-utils/utc-time';
 	options.mode = 0;
 	options.domain = ".*";
 	options.onlyHostname = false;
