@@ -25,6 +25,9 @@ node_modules
 .idea/
 .vscode/
 
+# Releases
+release.zip
+
 # =========================
 # Operating System Files
 # =========================
