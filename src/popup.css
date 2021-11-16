@@ -1,8 +1,8 @@
 @charset'UTF-8';
 body {
 	font-family: Arial, Helvetica, sans-serif;
-	width: 800px;
-	height: 600px;
+	width: 320px;
+	height: 200px;
 	overflow: hidden;
 	/* Disable scrollbars from popup window */
 }
