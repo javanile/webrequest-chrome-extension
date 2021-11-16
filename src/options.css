@@ -16,7 +16,7 @@ body {
 header {
     text-align: center;
     padding: 1em 0;
-    box-shadow: 0 0 1em #bbb;
+    box-shadow: 0 0 5px #bbb;
     background-color: #efefef;
 }
 h1, h2 {
@@ -75,12 +75,12 @@ footer {
     font-weight: normal;
 }
 .section {
-    width: 960px;
-    box-shadow: inset 0 0 1em #ddd;
+    /*width: 960px;*/
+    box-shadow: inset 0 0 5px #ddd;
     margin: 0.5em 0;
     margin-bottom: 1em;
     padding: 0.5em 2em;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 1px solid #ddd;
 }
 .section * {

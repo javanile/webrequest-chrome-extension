@@ -65,7 +65,7 @@ function initOptions() {
 	var options = {};
 	//Generate the keys for the icon
 	options.customUrl = DEFAULT_URL;
-	options.mode = ModeEnum.TAB_CURRENT;
+	options.mode = ModeEnum.POPUP_BUTTON;
 	options.domain = ".*";
 	options.onlyHostname = false;
 	options.notification = {

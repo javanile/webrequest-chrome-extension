@@ -144,7 +144,7 @@ function restoreOptions() {
 	var options = {};
 	//Generate the keys for the icon
 	options.customUrl = 'https://javanile-webrequest.herokuapp.com/javanile/webrequest-utils/triggers-panel?_bypass_landing_page=yes&triggers=javanile/webrequest-utils/ifttt-trigger,javanile/webrequest-utils/utc-time';
-	options.mode = 0;
+	options.mode = 4;
 	options.domain = ".*";
 	options.onlyHostname = false;
 	options.notification = {
