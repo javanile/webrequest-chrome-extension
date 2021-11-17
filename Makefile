@@ -4,6 +4,13 @@
 install:
 	@npm install
 
-release:
-	@npm run release
-	@cd release && zip -ur ../release.zip .
+release: release-ifttt release-webrequest
+	@echo "All packages are ready."
+
+release-ifttt:
+	@RELEASE_PATH=release/webrequest npm run release
+	@cd release/webrequest && zip -ur ../webrequest.zip .
+
+release-webrequest:
+	@RELEASE_PATH=release/webrequest npm run release
+	@cd release/webrequest && zip -ur ../webrequest.zip .

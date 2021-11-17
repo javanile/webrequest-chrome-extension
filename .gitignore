@@ -26,7 +26,7 @@ node_modules
 .vscode/
 
 # Releases
-release.zip
+release/*.zip
 
 # =========================
 # Operating System Files
