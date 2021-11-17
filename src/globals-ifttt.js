@@ -3,7 +3,7 @@
  *
  */
 
-const DEFAULT_NAME = 'webrequest'
+const DEFAULT_NAME = 'ifttt'
 	, DEFAULT_ICON = 'images/default-64.png'
 	, DEFAULT_URL = 'https://javanile-webrequest.herokuapp.com/javanile/webrequest-utils/triggers-panel?_bypass_landing_page=yes&triggers=javanile/webrequest-utils/ifttt-trigger,javanile/webrequest-utils/utc-time',
 	//DEFAULT_MODE = 0,
