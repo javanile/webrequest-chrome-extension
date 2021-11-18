@@ -1,4 +1,5 @@
 /*global chrome, console, document*/
+
 // Modes "enum"
 var ModeEnum = {
 	TAB_CURRENT: 0,
@@ -7,6 +8,7 @@ var ModeEnum = {
 	POPUP_WINDOW: 3,
 	POPUP_BUTTON: 4
 };
+
 // background.js globals
 var domainRegExp,
 	onlyHostnameGlobal,
@@ -207,5 +209,6 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 		});
 	}
 });
+
 // "OnLoad" listener to set the default options
 document.addEventListener('DOMContentLoaded', initOptions);

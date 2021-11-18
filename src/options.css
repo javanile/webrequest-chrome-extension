@@ -88,11 +88,19 @@ footer {
 }
 .controls {
     display: inline-block;
-    width: 60%;
+    width: 70%;
+}
+.controls-left {
+    display: inline-block;
+    width: 70%;
+}
+.controls-right {
+    display: inline-block;
+    width: 30%;
 }
 .help {
     display: inline-block;
-    width: 35%;
+    width: 25%;
     border-left: 1px solid #CCC;
     padding-left: 10px;
 }

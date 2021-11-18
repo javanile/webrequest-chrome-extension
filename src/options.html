@@ -15,9 +15,11 @@
 			<!--Custom URL-->
 			<div class="section">
 				<div class="controls">
-					<label for="customUrl">URL</label>
-					<input type="text" id="customUrl" maxlength="1024" />
-					<div id="windowMode">
+					<div class="controls-left">
+						<label for="customUrl">URL</label>
+						<input type="text" id="customUrl" maxlength="1024" />
+					</div>
+					<div class="controls-right" id="windowMode">
 						<p>Open URL in...</p>
 						<input type="radio" name="mode" value="Current tab" id="currentTab" />
 						<label for="currentTab" class="label2">Current tab</label>
@@ -50,15 +52,48 @@
 			<!--Icon-->
 			<div class="section">
 				<div class="controls">
-					<label>Icon</label>
-					<!--Base64 here (icons/default-32.png), makes it easy to load and save options later-->
-					<img src="images/default-64.png" alt="icon" id="iconImage" />
-					<div id="iconFileSelectors">
-						<label>Upload from hard drive</label>
+					<div class="controls-left">
+						<div>
+							<label>First Icon</label>
+							<!--Base64 here (icons/default-32.png), makes it easy to load and save options later-->
+							<img src="images/default-64.png" alt="icon" id="iconImage" />
+							<div id="iconFileSelectors">
+								<label>Upload from hard drive</label>
+								<br>
+								<input type="file" id="iconFilePicker" />
+								<br>
+								<span id="statusIcon" class="alert"></span>
+							</div>
+						</div>
+						<div>
+							<label>Second Icon</label>
+							<!--Base64 here (icons/default-32.png), makes it easy to load and save options later-->
+							<img src="images/default-64.png" alt="icon" id="iconImage" />
+							<div id="iconFileSelectors">
+								<label>Upload from hard drive</label>
+								<br>
+								<input type="file" id="iconFilePicker" />
+								<br>
+								<span id="statusIcon" class="alert"></span>
+							</div>
+						</div>
+					</div>
+					<div class="controls-right" id="windowMode">
+						<p>Open URL in...</p>
+						<input type="radio" name="mode" value="Current tab" id="currentTab" />
+						<label for="currentTab" class="label2">Current tab</label>
 						<br>
-						<input type="file" id="iconFilePicker" />
+						<input type="radio" name="mode" value="New tab" id="newTab" />
+						<label for="newTab" class="label2">New tab</label>
 						<br>
-						<span id="statusIcon" class="alert"></span>
+						<input type="radio" name="mode" value="New window" id="newWindow" />
+						<label for="newWindow" class="label2">New window</label>
+						<br>
+						<input type="radio" name="mode" value="New popup" id="windowPopup" />
+						<label for="windowPopup" class="label2">Popup window</label>
+						<br>
+						<input type="radio" name="mode" value="Button popup" id="buttonPopup" />
+						<label for="buttonPopup" class="label2">Popup on button</label>
 					</div>
 				</div>
 				<div class="help">
