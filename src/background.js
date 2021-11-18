@@ -30,7 +30,6 @@ var domainRegExp,
  */
 function initOptions() {
 	'use strict';
-
 	// Set defaults
 	var options = {};
 	//Generate the keys for the icon
