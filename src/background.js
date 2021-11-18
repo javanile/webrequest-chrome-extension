@@ -1,4 +1,6 @@
-/*global chrome, console, document*/
+/*!
+ * global chrome, console, document
+ */
 
 // Modes "enum"
 var ModeEnum = {
@@ -22,47 +24,13 @@ var domainRegExp,
 		'text': '',
 		'icon': ''
 	};
+
 /**
  * Initialize variables from storage settings
  */
 function initOptions() {
 	'use strict';
-	var cadena = '';
-	//sync.get callback, data received
-	function dataRetrieved(items) {
-		// Check for error
-		if (chrome.runtime.lastError !== undefined) {
-			console.log("An error ocurred initializing options: " + chrome.runtime.lastError.string);
-			return;
-		}
-		// Initialize
-		customUrlGlobal = items.customUrl;
-		domainGlobal = items.domain;
-		domainRegExp = new RegExp(domainGlobal);
-		onlyHostnameGlobal = items.onlyHostname;
-		modeGlobal = items.mode;
-		notificationGlobal.show = items.notification.show;
-		notificationGlobal.title = items.notification.title;
-		notificationGlobal.text = items.notification.text;
-		//Get icon parts and join them
-		var iconString = '';
-		for (var i = 0; i < ICON_MAX_KEYS; i++) {
-			iconString += items['icon' + i];
-		}
-		notificationGlobal.icon = iconString;
-		chrome.browserAction.setIcon({
-			path: iconString
-		});
-		if (modeGlobal === ModeEnum.POPUP_BUTTON) {
-			chrome.browserAction.setPopup({
-				popup: 'popup.html'
-			});
-		} else {
-			chrome.browserAction.setPopup({
-				popup: ''
-			});
-		}
-	}
+
 	// Set defaults
 	var options = {};
 	//Generate the keys for the icon
@@ -80,12 +48,50 @@ function initOptions() {
 		options['icon' + i] = '';
 	}
 	options.icon0 = 'images/default-64.png';
+
 	// Get the items from storage (asynchronous)
 	chrome.storage.sync.get(options, dataRetrieved);
 }
-// 
+
+//sync.get callback, data received
+function dataRetrieved(items) {
+	// Check for error
+	if (chrome.runtime.lastError !== undefined) {
+		console.log("An error ocurred initializing options: " + chrome.runtime.lastError.string);
+		return;
+	}
+	// Initialize
+	customUrlGlobal = items.customUrl;
+	domainGlobal = items.domain;
+	domainRegExp = new RegExp(domainGlobal);
+	onlyHostnameGlobal = items.onlyHostname;
+	modeGlobal = items.mode;
+	notificationGlobal.show = items.notification.show;
+	notificationGlobal.title = items.notification.title;
+	notificationGlobal.text = items.notification.text;
+	//Get icon parts and join them
+	var iconString = '';
+	for (var i = 0; i < ICON_MAX_KEYS; i++) {
+		iconString += items['icon' + i];
+	}
+	notificationGlobal.icon = iconString;
+	chrome.browserAction.setIcon({
+		path: iconString
+	});
+	if (modeGlobal === ModeEnum.POPUP_BUTTON) {
+		chrome.browserAction.setPopup({
+			popup: 'popup.html'
+		});
+	} else {
+		chrome.browserAction.setPopup({
+			popup: ''
+		});
+	}
+}
+
 /**
- * Replaces %url with the current tabUrl
+ * Replaces %url with the current tabUrl.
+ *
  * @param  {string} url
  * @return {string}		[URL replaced with active tab URL]
  */
@@ -98,6 +104,7 @@ function prepareUrl(url) {
 	finalUrl = customUrlGlobal.replace('%url', url);
 	return finalUrl;
 }
+
 /**
  * Check if domain is valid
  * @param  {string} url
@@ -106,8 +113,9 @@ function prepareUrl(url) {
 function checkDomain(url) {
 	return domainRegExp.test(url);
 }
+
 /**
- * Show notification if active
+ * Show notification if active.
  */
 function showNotification() {
 	if (notificationGlobal.show === true) {
@@ -123,8 +131,10 @@ function showNotification() {
 		});
 	}
 }
+
 /**
- * On button clicked, check, replace and go to url
+ * On button clicked, check, replace and go to url.
+ *
  * @param  {int} tabId ID from the active tab
  */
 chrome.browserAction.onClicked.addListener(function(tabId) {
@@ -163,8 +173,10 @@ chrome.browserAction.onClicked.addListener(function(tabId) {
 		showNotification();
 	}
 });
+
 /**
- * On settings/storage change, update variables
+ * On settings/storage change, update variables.
+ *
  * @param  {Object} changes   Contains properties changed
  * @param  {string} namespace No use
  */

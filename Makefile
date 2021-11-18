@@ -19,6 +19,12 @@ release-ifttt-bookmark:
 	@rm -f release/ifttt-bookmark/globals-*.js
 	@cd release/ifttt-bookmark && zip -ur ../ifttt-bookmark.zip .
 
+release-ifttt-toggle-button:
+	@cp -f src/globals-ifttt-toggle-button.js src/globals.js
+	@RELEASE_PATH=release/ifttt-toggle-button npm run release
+	@rm -f release/ifttt-toggle-button/globals-*.js
+	@cd release/ifttt-toggle-button && zip -ur ../ifttt-toggle-button.zip .
+
 release-webrequest:
 	@cp -f src/globals-webrequest.js src/globals.js
 	@RELEASE_PATH=release/webrequest npm run release
