@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){var n=chrome.extension.getBackgroundPage();chrome.tabs.query({active:!0,lastFocusedWindow:!0},function(e){e=e[0].url;void 0!==e&&n.checkDomain(e)?(e=n.prepareUrl(e),document.getElementById("frameContent").src=e):(n.showNotification(),window.close())})});
