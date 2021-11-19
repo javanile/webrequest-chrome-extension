@@ -11,7 +11,7 @@ body {
 #wrapper-main {
     margin: 30px auto 0 auto;
     min-width: 576px;
-    max-width: 1080px;
+    max-width: 960px;
 }
 header {
     text-align: center;
@@ -39,7 +39,10 @@ h2 {
 }
 input[type="text"] {
     padding: 0 0.5em;
-    min-width: 300px;
+    min-width: 35em;
+}
+input[type="radio"] {
+    vertical-align: top;
 }
 label {
     font-weight: bold;
@@ -61,15 +64,18 @@ footer {
 }
 #windowMode {
     display: inline-block;
-    margin-left: 2em;
+    margin-left: 0.25em;
 }
 #iconImage {
     background: #eee url(images/checkerboard.png) repeat;
-    margin: 0 1em;
+    margin: 0 1em 0 0;
     padding: 1em;
     border: 3px solid #ccc;
     max-width: 64px;
     max-height: 64px;
+}
+.iconControl {
+    margin: 1em 0;
 }
 .label2 {
     font-weight: normal;
@@ -88,21 +94,25 @@ footer {
 }
 .controls {
     display: inline-block;
-    width: 70%;
+    width: 64%;
+}
+.controls-top {
+    display: block;
+    margin-bottom: 1em;
 }
 .controls-left {
     display: inline-block;
-    width: 70%;
+    width: 65%;
 }
 .controls-right {
     display: inline-block;
-    width: 30%;
+    width: 32%;
 }
 .help {
     display: inline-block;
-    width: 25%;
+    width: 34%;
     border-left: 1px solid #CCC;
-    padding-left: 10px;
+    padding: 0.25em 0 0.25em 0.75em;
 }
 .warning {
     color: #FF8000;
