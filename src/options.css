@@ -74,6 +74,13 @@ footer {
     max-width: 64px;
     max-height: 64px;
 }
+#arguments {
+    line-height: 2em;
+}
+#arguments input[type=text] {
+    min-width: 5em;
+    max-width: 10em;
+}
 .iconControl {
     margin: 1em 0;
 }
