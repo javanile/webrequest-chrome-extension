@@ -1,4 +1,4 @@
-<h1>Custom Button</h1>
+<h1>Chrome meet webrequest.cc</h1>
 
 <b>Custom Button</b> is a simple Chrome extension where you can customize a button, set an URL, change the icon and some other stuff.
 
