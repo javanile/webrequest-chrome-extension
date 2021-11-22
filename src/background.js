@@ -8,7 +8,8 @@ var ModeEnum = {
 	TAB_NEW: 1,
 	WINDOW: 2,
 	POPUP_WINDOW: 3,
-	POPUP_BUTTON: 4
+	POPUP_BUTTON: 4,
+	NOTIFICATION_FEEDBACK: 5,
 };
 
 // background.js globals
@@ -34,7 +35,7 @@ function initOptions() {
 	var options = {};
 	//Generate the keys for the icon
 	options.customUrl = DEFAULT_URL;
-	options.mode = ModeEnum.POPUP_BUTTON;
+	options.mode = DEFAULT_MODE;
 	options.domain = ".*";
 	options.onlyHostname = false;
 	options.notification = {
@@ -138,6 +139,7 @@ function showNotification() {
  */
 chrome.browserAction.onClicked.addListener(function(tabId) {
 	'use strict';
+	console.log("CLICK", modeGlobal, tabId.url)
 	var tabUrl = tabId.url;
 	// Check if the active tab url matches the allowed domains for the button to activate
 	if (tabUrl !== undefined && checkDomain(tabUrl)) {
@@ -166,7 +168,22 @@ chrome.browserAction.onClicked.addListener(function(tabId) {
 					'type': 'popup' //popup
 				});
 				break;
-				// case ModeEnum.POPUP_BUTTON: // Nothing to do here
+			case ModeEnum.NOTIFICATION_FEEDBACK: //popup as new window
+				console.log("CALL", newUrl);
+				fetch(newUrl, {method: 'POST'}).then(r => r.text()).then(result => {
+					console.log("RES", result);
+					var options = {
+						type: "basic",
+						title: "Hello!",
+						message: "Hello!",
+						iconUrl: notificationGlobal.icon
+					};
+					// No video alert
+					chrome.notifications.clear(notificationGlobal.id, function() {
+						chrome.notifications.create(notificationGlobal.id, options, function() {});
+					});
+				});
+				break;
 		}
 	} else {
 		showNotification();

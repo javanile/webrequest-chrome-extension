@@ -22,16 +22,20 @@
 					<div class="controls-left">
 						<label>Arguments</label>
 						<div id="arguments">
+							<input type="text" name="argumentKey0" id="argumentKey0" value="ifttt_webhooks_key" placeholder="" readonly> =
+							<input type="text" name="argumentValue0" id="argumentValue0" value="" placeholder="Type webhooks key">
 							<input type="text" name="argumentKey1" id="argumentKey1" value="value1" placeholder="Argument 1"> =
 							<input type="text" name="argumentValue1" id="argumentValue1" value="" placeholder="Value 1"><br/>
 							<input type="text" name="argumentKey2" id="argumentKey2" value="value2" placeholder="Argument 2"> =
 							<input type="text" name="argumentValue2" id="argumentValue2" value="" placeholder="Value 2"><br/>
 							<input type="text" name="argumentKey3" id="argumentKey3" value="value3" placeholder="Argument 3"> =
 							<input type="text" name="argumentValue3" id="argumentValue3" value="" placeholder="Value 3"><br/>
-							<input type="text" name="argumentKey4" id="argumentKey4" value="value4" placeholder="Argument 4"> =
-							<input type="text" name="argumentValue4" id="argumentValue4" value="" placeholder="Value 4"><br/>
-							<input type="text" name="argumentKey5" id="argumentKey5" value="value5" placeholder="Argument 5"> =
-							<input type="text" name="argumentValue5" id="argumentValue5" value="" placeholder="Value 5"><br/>
+							<div style="display:none;">
+								<input type="text" name="argumentKey4" id="argumentKey4" value="value4" placeholder="Argument 4"> =
+								<input type="text" name="argumentValue4" id="argumentValue4" value="" placeholder="Value 4"><br/>
+								<input type="text" name="argumentKey5" id="argumentKey5" value="value5" placeholder="Argument 5"> =
+								<input type="text" name="argumentValue5" id="argumentValue5" value="" placeholder="Value 5"><br/>
+							</div>
 						</div>
 					</div>
 					<div class="controls-right" id="windowMode">
@@ -50,6 +54,9 @@
 						<br>
 						<input type="radio" name="mode" value="Button popup" id="buttonPopup" />
 						<label for="buttonPopup" class="label2">Popup on button</label>
+						<br>
+						<input type="radio" name="mode" value="Notification feedback" id="notificationFeedback" />
+						<label for="notificationFeedback" class="label2">Notification feedback</label>
 					</div>
 				</div>
 				<div class="help">
@@ -62,6 +69,8 @@
 					</p>
 					<p>Choose the <b>opening method</b>. For example, you could set the url to <i>chrome://extensions</i> and then set it to open on a popup window.</p>
 					<p class="warning">Popup on button: Due to browser <a href="http://en.wikipedia.org/wiki/Same-origin_policy">security policies</a>, some sites won't load in the button popup. For example Google sites and Facebook won't load.</p>
+					<br />
+					<button id="urlRestore">Restore default</button>
 				</div>
 			</div>
 			<!-- Icons -->

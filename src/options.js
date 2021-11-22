@@ -138,12 +138,13 @@ function saveOptions() {
 /**
  * Restore user options on page load
  */
-function restoreOptions() {
+function loadOptions() {
+	console.log('DU:', DEFAULT_URL);
 	'use strict';
 	// Set defaults for localStorage get error
 	var options = {};
 	//Generate the keys for the icon
-	options.customUrl = 'https://javanile-webrequest.herokuapp.com/javanile/webrequest-utils/triggers-panel?_bypass_landing_page=yes&triggers=javanile/webrequest-utils/ifttt-trigger,javanile/webrequest-utils/utc-time';
+	options.customUrl = DEFAULT_URL;
 	options.mode = 4;
 	options.domain = ".*";
 	options.onlyHostname = false;
@@ -196,6 +197,15 @@ function resetIcon() {
 	'use strict';
 	document.getElementById('iconImage').src = DEFAULT_ICON;
 }
+
+/**
+ * Reset to default icon
+ */
+function resetUrl() {
+	'use strict';
+	document.getElementById('customUrl').value = DEFAULT_URL;
+}
+
 /**
  * Reset notification options values
  */
@@ -220,13 +230,15 @@ function toggleNotificationOptions() {
 /**
  * Listeners
  */
-document.addEventListener('DOMContentLoaded', restoreOptions);
+document.addEventListener('DOMContentLoaded', loadOptions);
 document.getElementById('save').addEventListener('click', saveOptions);
 document.getElementById('iconFilePicker').addEventListener('change', handleFileSelect, false);
 document.getElementById('notification').addEventListener('change', toggleNotificationOptions);
 document.getElementById('domainRestore').addEventListener('click', resetDomain);
 document.getElementById('notificationRestore').addEventListener('click', resetNotification);
 document.getElementById('iconRestore').addEventListener('click', resetIcon);
+document.getElementById('urlRestore').addEventListener('click', resetUrl);
+
 if (window.File && window.FileReader && window.FileList && window.Blob) {
 	document.getElementById('iconFilePicker').addEventListener('change', handleFileSelect, false);
 } else {
