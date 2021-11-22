@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
 
-    "name": "Webrequest for Chrome",
-	"short_name": "Webrequest",
-    "description": "Customize your webrequest and run it directory form Chrome.",
+    "name": "IFTTT Toggle Button",
+	"short_name": "Toggle Button",
+    "description": "Turn on your favorite applet from Chrome with a smart IFTTT button",
     "version": "1.0.2",
 
     "permissions": ["notifications", "storage", "tabs"],
